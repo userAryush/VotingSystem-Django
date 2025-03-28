@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class ="mb-5 text-center">{{ topics.topic }}</h1>
+
+<ul class ="list-group mb-5">
+	{% for choice in topics.options_set.all %}
+	<li class ="list-group-item">
+		{{ choice.options_text }} <span class ="badge badge-success float-right">{{ choice.votes }}
+			vote{{ choice.votes | pluralize }}</span>
+	</li>
+	{% endfor %}
+</ul>
+
+<a class ="btn btn-secondary" href ="{% url 'polls:index' %}">Back To Polls</a>
+<a class ="btn btn-dark" href ="{% url 'polls:detail' topics.id %}">Vote again?</a>
+{% endblock %}
