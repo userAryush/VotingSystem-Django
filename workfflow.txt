@@ -1,0 +1,13 @@
+models
+admin.py
+views.py
+    index -> triggered when user visits homepage -> Displays the list of latest topics (polls).
+    detail -> Shows a specific topic and its options. 
+     the data from the database using id requested and sending the content through dictionary 
+
+    results -> Displays voting results for a topic.
+    fetching the data from the database using id requested and sending the content through dictionary
+
+
+    vote-> Handles voting for a specific topic option.
+

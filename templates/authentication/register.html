@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card text-center">  
+    <div class="card-body"> 
+        <h1>Register to VoteHala</h1>
+        <p>Create your account.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <div class="mt-3">
+            <p>Already have an account?</p>
+            <a class="btn btn-success" href="{% url 'polls:login' %}">Register</a>
+        </div>
+    </div>
+</div>
+
+{% if errors %}
+    <p style="color: red;">{{ errors }}</p>
+{% endif %}
+{% endblock %}

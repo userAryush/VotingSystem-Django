@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Topic,Options
+from .models import Topic,Options,User
 # Register your models here.
 admin.site.site_header = "VoteHala"
 admin.site.site_title = "VoteHala Admin Area"
@@ -14,5 +14,6 @@ class TopicAdmin(admin.ModelAdmin):
                  ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),]
     inlines = [OptionInLine]
     
+admin.site.register(User)
 admin.site.register(Topic, TopicAdmin)
 # admin.site.register(Options)

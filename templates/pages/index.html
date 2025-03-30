@@ -2,11 +2,22 @@
 {% block content %}
 
 <div class="card text-center">  
-    <div class="card-body" > 
-       <h1> Welcome to VoteHala!</h1>
-    <p>Big decisions, made easy.</p>
-    <a class="btn btn-dark" href = "{% url 'polls:index' %}"> 
-        View Available Polls! </a>   
+    <div class="card-body"> 
+        <h1>Welcome to VoteHala!</h1>
+        <p>Big decisions, made easy.</p>
+        {% comment %} <a class="btn btn-dark" href="{% url 'polls:index' %}"> 
+            View Available Polls! 
+        </a> {% endcomment %}
+        <div class="mt-3">
+            <!-- Login Button -->
+            <a class="btn btn-primary" href="{% url 'polls:login' %}">
+                Login
+            </a>
+            <!-- Register Button -->
+            <a class="btn btn-success" href="{% url 'polls:register' %}">
+                Register
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}
